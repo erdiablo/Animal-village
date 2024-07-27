@@ -6,6 +6,7 @@
     <title>Unity WebGL Player | Animal Village</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -90,7 +91,6 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -113,10 +113,14 @@
               }).catch((message) => {
                 alert(message);
               });
-            };
+      };
 
       document.body.appendChild(script);
 
+      // Initialize and expand Telegram Web App to fullscreen
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+      
     </script>
   </body>
 </html>
