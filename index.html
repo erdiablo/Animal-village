@@ -130,6 +130,14 @@
         e.preventDefault();
     }, { passive: false });
 
+    document.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('pointermove', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
     // Initialize and expand Telegram Web App to fullscreen
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
