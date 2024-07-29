@@ -14,6 +14,7 @@
             overflow: hidden;
             width: 100%;
             height: 100%;
+            touch-action: none;
         }
 
         #unity-container {
@@ -119,6 +120,15 @@
     };
 
     document.body.appendChild(script);
+
+    // Prevent swipe gestures to collapse the game
+    document.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, { passive: false });
 
     // Initialize and expand Telegram Web App to fullscreen
     Telegram.WebApp.ready();
